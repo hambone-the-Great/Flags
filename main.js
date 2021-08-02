@@ -1,5 +1,3 @@
-
-
 var MyApp = function() {
 
     var Controls = {
@@ -7,23 +5,14 @@ var MyApp = function() {
         StartButton: {
             Id: "btnStart", 
             get Node() { return document.getElementById(this.Id); }, 
-            Hide: function() { 
-                this.Node.style.display = "none";
-            }, 
-            Show: function() {
-                this.Node.style.display = "block";
-            }
-
+            Hide: function() { this.Node.style.display = "none"; }, 
+            Show: function() { this.Node.style.display = "block"; }
         }, 
-
         Music: {
             Id: "audio", 
             get Node() { return document.getElementById(this.Id); },
-            PlayMusic: function() {
-                this.Node.play();
-            }
+            PlayMusic: function() { this.Node.play(); }
         }
-
     };
 
 	var Methods = {
@@ -56,7 +45,7 @@ var MyApp = function() {
             if (i <= 100) {
                 e.style.opacity = i / 100;
                 i++;
-                window.setTimeout(function () { MyApp.Methods.FadeIn(e, t, i, callback, final) }, t);
+                window.setTimeout(function () { MyApp.Methods.FadeIn(e, t, i, callback, final); }, t);
             }
             else {
                 if (callback) callback(e, t, i, null, final);
@@ -79,13 +68,7 @@ var MyApp = function() {
 
             if (i >= items.length) i = 0;
 
-            var item = items[i];
-            
-            if (item.getAttribute("") === null) {
-                for (var i = 0; i < items.length; i++) {
-                    items[i].setAttribute("data-index", i);
-                }                
-            }
+            var item = items[i];            
 
             item.style.opacity = 0;
             item.style.visibility = "visible";
